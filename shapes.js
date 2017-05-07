@@ -41,3 +41,24 @@ svg.selectAll("line")
   .attr("y1", function(d, i){return 80 + (i * 20); })
   .attr("x2", function(d){return newX + (d * 15); })
   .attr("y2", function(d, i){return 80 + (i * 20);})
+
+var textArray = ["start", "middle", "end"];
+
+svg.append("text").selectAll("tspan")
+   .data(textArray)
+   .enter().append("tspan")
+   .attr("x", newX)
+   .attr("y", function(d,i){return 150 + (i * 30); })
+   .attr("fill", "none")
+   .attr("stroke", "blue")
+   .attr("stroke-width", "2")
+   .attr("font-size", "30")
+   .attr("text-anchor", "start")
+   .attr("dominant-baseline", "middle")
+   .text(function(d){ return d; });
+
+svg.append("line")
+  .attr("x1", newX)
+  .attr("y1", "150")
+  .attr("x2", newX)
+  .attr("y2", "210")
