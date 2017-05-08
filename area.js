@@ -20,10 +20,6 @@ var x = d3.scaleTime()
 var yAxis = d3.axisLeft(y).ticks(5).tickPadding(10).tickSize(10);
 var xAxis = d3.axisBottom(x);
 
-console.log(y(0));
-console.log(y(90));
-console.log(y(180));
-
 var area = d3.area().x(function(d, i){ return x(parseDate(dataYrs[i])) ;})
                     .y0(height)
                     .y1(function(d) {return y(d); });
