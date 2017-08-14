@@ -13,11 +13,16 @@ g.group0 circle {
   fill: none;
 }
 
+g.hidden line,
+g.hidden path {
+  display: none;
+}
+
 g.tick line {
   stroke: blue;
 }
 
 g.tick text {
-  font-size: 12px;
+  font-size: 14px;
   fill:purple;
 }

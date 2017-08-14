@@ -1,7 +1,7 @@
-var dataArr = [1, 3, 8, 11, 15, 17, 18, 20, 25, 32, 37, 42, 45, 47, 52, 56, 62];
+var dataArr = [1, 3, 8, 11, 15, 17, 18, 20, 25, 32, 37, 42, 45, 47, 52, 56, 62, 65];
 
 var dataYrs = ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008',
-              '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'];
+              '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017'];
 
 var parseDate = d3.timeParse("%Y");
 var height = 200;
@@ -17,7 +17,7 @@ var x = d3.scaleTime()
           .domain(d3.extent(dataYrs, function(d){return parseDate(d);}))
           .range([0, width]);
 
-var yAxis = d3.axisLeft(y).ticks(5).tickPadding(10).tickSize(10);
+var yAxis = d3.axisLeft(y).ticks(5).tickPadding(8).tickSize(10);
 var xAxis = d3.axisBottom(x);
 
 var area = d3.area().x(function(d, i){ return x(parseDate(dataYrs[i])) ;})
